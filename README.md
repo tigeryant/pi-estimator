@@ -2,7 +2,7 @@
 ## Overview
 This python program estimates the value of Pi by randomly generating points (monte carlo) within certain bounds and calculating the ratio of total points to those that fell within certain parameters.
 
-## Control Flow
+## Control Flow and Description
 Random points (xy co-ordinates) are generated within a square. Within that square is a circle. The diameter of the circle is equal to the length
 of one side of the square. An estimate of Pi is calculated with the following formula:
 Pi is approximately equal to 4 * (Ninner/Ntotal)
