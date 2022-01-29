@@ -14,9 +14,9 @@ the number of trials (points generated), the number of points inside the circle,
 ## GUI
 The figure below shows a screenshot of the GUI at runtime.
 
-<div>
+<p align="center">
   <img src="https://i.imgur.com/qcfEd5d.png" width="700">
-  </div>
+  </p>
 
 ## Monte Carlo Algorithm
 The 'monte carlo method' refers to the use of random trial and error to perform some form of analysis, in this case, the value of Pi. This program
