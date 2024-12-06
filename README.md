@@ -1,23 +1,56 @@
-# Pi-estimator-Monte-Carlo-method
+# Pi Estimator: Monte Carlo Method
+
 ## Overview
-This python program estimates the value of Pi by randomly generating points (monte carlo) within certain bounds and calculating the ratio of total points to those that fell within certain parameters.
+This Python program estimates the value of $\pi$ using the Monte Carlo method. By randomly generating points within a square and checking whether they fall inside an inscribed circle, the program calculates an approximation of $\pi$. The estimate improves as the number of points increases.
+
+## Concept and Formula
+1. **Setup**:
+   - The square has side length $2r$, and the circle has radius $r$, with the circle perfectly inscribed in the square.
+   - The area of the square is $4r^2$, and the area of the circle is $\pi r^2$.
+
+2. **Monte Carlo Method**:
+   - Random points $(x, y)$ are generated within the square, where $x, y \in [-r, r]$.
+   - A point is considered inside the circle if it satisfies $x^2 + y^2 \leq r^2$.
+
+3. **Estimation of $\pi$**:
+   - The ratio of points inside the circle ($N_\text{circle}$) to the total number of points ($N_\text{total}$) is approximately equal to the ratio of the circle's area to the square's area:
+     $\frac{N_\text{circle}}{N_\text{total}} \approx \frac{\pi}{4}$
+   - Rearranging, we estimate $\pi$ as:
+     $\pi \approx 4 \cdot \frac{N_\text{circle}}{N_\text{total}}$
 
 ## Control Flow and Description
-Random points (xy co-ordinates) are generated within a square. Within that square is a circle. The diameter of the circle is equal to the length
-of one side of the square. An estimate of Pi is calculated with the following formula:
-Pi is approximately equal to 4 * (Ninner/Ntotal)
-where Ninner is the number of points generated that fell within the bounds of the circle and Nouter is the total number of points generated.
-As more points are generated, the estimate of Pi tends closer and closer to its true value (allowing for fluctuations).
-The graph of these points is displayed on one axis. In another axis, the following values are displayed:
-the number of trials (points generated), the number of points inside the circle, the number of points outside the circle and the estimate of Pi.
+1. **Random Point Generation**:
+   - Points are generated randomly within the square's bounds.
+
+2. **Classification**:
+   - Each point is classified as either inside the circle or outside the circle based on the condition $x^2 + y^2 \leq r^2$.
+
+3. **Estimation**:
+   - $\pi$ is calculated using the formula:
+     $\pi \approx 4 \cdot \frac{N_\text{circle}}{N_\text{total}}.$
+   - As the number of points ($N_\text{total}$) increases, the estimate converges toward the true value of $\pi$, though fluctuations may occur.
+
+4. **Visualization**:
+   - A graph displays the randomly generated points, showing their distribution within the square and the circle.
+   - Another graph tracks:
+     - The total number of trials ($N_\text{total}$).
+     - The number of points inside the circle ($N_\text{circle}$).
+     - The number of points outside the circle ($N_\text{total} - N_\text{circle}$).
+     - The running estimate of $\pi$.
 
 ## GUI
-The figure below shows a screenshot of the GUI at runtime.
-
+The figure below shows a screenshot of the GUI at runtime. It includes:
+- A graphical representation of the points distributed in the square and circle.
+- Real-time statistics, including:
+  - Number of points generated.
+  - Points inside the circle.
+  - Points outside the circle.
+  - The current estimate of $\pi$.
+  
 <p align="center">
-  <img src="https://i.imgur.com/qcfEd5d.png" width="700">
-  </p>
+<img src="https://i.imgur.com/qcfEd5d.png" width="800">
+</p>
 
-## Monte Carlo Algorithm
-The 'monte carlo method' refers to the use of random trial and error to perform some form of analysis, in this case, the value of Pi. This program
-serves as a demonstration of a (somewhat trivial) application of the monte carlo method, rather than as an efficient method of calculating Pi.
+## Notes
+- The accuracy of the estimate improves as more points are generated.
+- Results may vary slightly due to the stochastic nature of the method.
